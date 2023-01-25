@@ -1,3 +1,4 @@
+import Test from "./_test";
 
 export class TestSuite {
   private name: string;
@@ -7,4 +8,10 @@ export class TestSuite {
   constructor(name: string) {
     this.name = name;
     this.tests = [];
+  }
+
+  add_test(description: string): Test {
+    const t = new Test(description);
+    this.tests.push(t);
+    return t;
   }
