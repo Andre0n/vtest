@@ -1,11 +1,11 @@
 {
   "name": "vtest",
   "version": "1.0.0",
-  "scripts" : {
-    "dev" : "node src/index.js"
+  "scripts": {
+    "dev": "tsx src/index.ts"
   },
   "description": "A test libary for fun.",
-  "main": "index.js",
+  "main": "index.ts",
   "repository": "https://github.com/Andre0n/vtest",
   "author": "André Gabriel",
   "license": "MIT",
