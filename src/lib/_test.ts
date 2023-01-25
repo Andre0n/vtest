@@ -1,3 +1,4 @@
+import { new_output_message } from "./utils";
 import { matcher_options } from "./types";
 
 export default class Test {
@@ -20,6 +21,7 @@ export default class Test {
           current: current,
         };
         const pass = Object.is(current, expected);
+        this.result = new_output_message(options, pass, this.description);
         this.sucess = pass;
       },
     };
