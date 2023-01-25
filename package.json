@@ -1,0 +1,12 @@
+{
+  "name": "vtest",
+  "version": "1.0.0",
+  "scripts" : {
+    "dev" : "node src/index.js"
+  },
+  "description": "A test libary for fun.",
+  "main": "index.js",
+  "repository": "https://github.com/Andre0n/vtest",
+  "author": "André Gabriel",
+  "license": "MIT"
+}
