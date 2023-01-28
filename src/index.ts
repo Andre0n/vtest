@@ -36,6 +36,19 @@ const main = () => {
     })
     .toBeCloseTo(0.3);
 
+  my_suite
+    .add_test("check if is null")
+    .expect(() => {
+      return null;
+    })
+    .toBeNull();
+  my_suite
+    .add_test("check if is not null")
+    .expect(() => {
+      return null;
+    })
+    .notBeNull();
+
   my_suite.report();
 };
 main();
