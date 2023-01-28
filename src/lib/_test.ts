@@ -1,5 +1,4 @@
-import { new_output_message } from "./utils";
-import { matcher_options } from "./types";
+import get_matchers from "./matchers";
 
 export default class Test {
   private description: string;
@@ -12,29 +11,6 @@ export default class Test {
 
   expect(test_function: () => any) {
     const current = test_function();
-    return {
-      toBe: (expected: any) => {
-        const options: matcher_options = {
-          matcher_name: "toBe",
-          comment: "Object.is equality",
-          expected: expected,
-          current: current,
-        };
-        const pass = Object.is(current, expected);
-        this.result = new_output_message(options, pass, this.description);
-        this.sucess = pass;
-      },
-      notBe: (expected: any) => {
-        const options: matcher_options = {
-          matcher_name: "toBe",
-          comment: "!(Object.is) not equality",
-          expected: expected,
-          current: current,
-        };
-        const pass = !Object.is(current, expected);
-        this.result = new_output_message(options, pass, this.description);
-        this.sucess = pass;
-      },
-    };
+    return get_matchers(this, current);
   }
 }
