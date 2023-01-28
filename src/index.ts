@@ -1,12 +1,12 @@
 import { TestSuite } from "./lib";
 const main = () => {
-  const my_suite = new TestSuite("Test numbers");
+  const my_suite = new TestSuite("Test Suite Example");
   my_suite
     .add_test(" 1 + 1 should be 2")
     .expect(() => {
       return 1 + 1;
     })
-    .toBe(3);
+    .toBe(2);
 
   my_suite
     .add_test(" 'aabb' == 'aabb' ")
@@ -25,7 +25,7 @@ const main = () => {
   my_suite
     .add_test("check if was defined")
     .expect(() => {
-      return undefined;
+      return {};
     })
     .toBeDefined();
 
