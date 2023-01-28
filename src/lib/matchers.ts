@@ -79,6 +79,42 @@ const get_matchers = (current_test: Test, current: any) => {
       );
       current_test.sucess = pass;
     },
+
+    toBeCloseTo(expected: number, precision: number = 2) {
+      if (typeof expected !== "number") {
+        throw new Error(`expected must be  number`);
+      }
+      if (typeof current !== "number") {
+        throw new Error(`current must be  number`);
+      }
+
+      const options: matcher_options = {
+        matcher_name: "toBeCloseTo",
+        comment: "",
+        expected: "any",
+        current: current,
+      };
+
+      let pass = false;
+      let expectedDiff = 0;
+      let currentDiff = 0;
+
+      if (current === Infinity && expected === Infinity) {
+        pass = true;
+      } else if (current === -Infinity && expected === -Infinity) {
+        pass = true;
+      } else {
+        expectedDiff = Math.pow(10, -precision) / 2;
+        currentDiff = Math.abs(expected - current);
+        pass = currentDiff < expectedDiff;
+      }
+      current_test.result = new_output_message(
+        options,
+        pass,
+        current_test.description
+      );
+      current_test.sucess = pass;
+    },
   };
 };
 
