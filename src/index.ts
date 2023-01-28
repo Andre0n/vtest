@@ -22,6 +22,13 @@ const main = () => {
     })
     .notBe(3);
 
+  my_suite
+    .add_test("check if was defined")
+    .expect(() => {
+      return undefined;
+    })
+    .toBeDefined();
+
   my_suite.report();
 };
 main();
