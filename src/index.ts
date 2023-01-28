@@ -29,6 +29,13 @@ const main = () => {
     })
     .toBeDefined();
 
+  my_suite
+    .add_test("check if 0.1 + 0.2 is close to 0.3")
+    .expect(() => {
+      return 0.1 + 0.2;
+    })
+    .toBeCloseTo(0.3);
+
   my_suite.report();
 };
 main();
