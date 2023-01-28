@@ -49,6 +49,36 @@ const get_matchers = (current_test: Test, current: any) => {
       );
       current_test.sucess = pass;
     },
+    toBeNull() {
+      const pass = current === null;
+      const options: matcher_options = {
+        matcher_name: "toBeNull",
+        comment: "The object is not null",
+        expected: "null",
+        current: current,
+      };
+      current_test.result = new_output_message(
+        options,
+        pass,
+        current_test.description
+      );
+      current_test.sucess = pass;
+    },
+    notBeNull() {
+      const pass = !(current === null);
+      const options: matcher_options = {
+        matcher_name: "notBeNull",
+        comment: "The object is null",
+        expected: "any",
+        current: current,
+      };
+      current_test.result = new_output_message(
+        options,
+        pass,
+        current_test.description
+      );
+      current_test.sucess = pass;
+    },
   };
 };
 
