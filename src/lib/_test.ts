@@ -24,6 +24,17 @@ export default class Test {
         this.result = new_output_message(options, pass, this.description);
         this.sucess = pass;
       },
+      notBe: (expected: any) => {
+        const options: matcher_options = {
+          matcher_name: "toBe",
+          comment: "!(Object.is) not equality",
+          expected: expected,
+          current: current,
+        };
+        const pass = !Object.is(current, expected);
+        this.result = new_output_message(options, pass, this.description);
+        this.sucess = pass;
+      },
     };
   }
 }
