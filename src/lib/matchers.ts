@@ -1,5 +1,6 @@
 import { matcher_options } from "./types";
 import { new_output_message } from "./utils";
+import Test from "./_test";
 const get_matchers = (current_test: Test, current: any) => {
   return {
     toBe: (expected: any) => {
