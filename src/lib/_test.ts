@@ -1,7 +1,7 @@
 import get_matchers from "./matchers";
 
 export default class Test {
-  private description: string;
+  description: string;
   sucess: boolean = false;
   result: string = "";
 
