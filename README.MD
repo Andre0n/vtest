@@ -52,6 +52,13 @@ my_suite
   })
   .toBe("aabb");
 
+my_suite
+  .add_test("2 - 1 should not be 3")
+  .expect(() => {
+    return 2 - 1;
+  })
+  .notBe(3);
+
 my_suite.report();
 ```
 
@@ -62,8 +69,9 @@ Test Example
   ✖  1 + 1 should be 2  toBe: Object.is equality
 	 >> Expected: 3  Got: 2 <<
   ✔  'aabb' == 'aabb'
+  ✔ 2 - 1 should not be 3
 
-Tests: 	Passed: 1, Failed: 1, Total: 2
+Tests:  Passed: 2, Failed: 1, Total: 3
 ```
 
 ## Authors
