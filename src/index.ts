@@ -15,6 +15,13 @@ const main = () => {
     })
     .toBe("aabb");
 
+  my_suite
+    .add_test("2 - 1 should not be 3")
+    .expect(() => {
+      return 2 - 1;
+    })
+    .notBe(3);
+
   my_suite.report();
 };
 main();
