@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "outDir": "./vtest",
+    "declaration": true,
+    "sourceMap": true,
+    "target": "es6",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}

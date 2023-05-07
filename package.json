@@ -1,0 +1,19 @@
+{
+  "name": "vtest",
+  "version": "1.0.0",
+  "description": "A very simple test libary.",
+  "main": "index.js",
+  "scripts": {
+    "build" : "tsc",
+    "test": "node tests.js"
+  },
+  "keywords": [
+    "test",
+    "typescript"
+  ],
+  "author": "Andre0n",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
